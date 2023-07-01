@@ -1,0 +1,46 @@
+{
+  "name": "@rugo-vn/caddy",
+  "version": "1.0.0-beta.0",
+  "description": "Interaction and mocking caddy server.",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./src/dev.js",
+    "test:real": "mocha",
+    "test:mock": "MOCK_SERVER=true mocha",
+    "test:real-client": "MOCK_CLIENT=true mocha",
+    "test:mock-client": "MOCK_CLIENT=true MOCK_SERVER=true mocha",
+    "publish:beta": "npm publish --access public --tag beta",
+    "publish:release": "npm publish --access public",
+    "docker:start": "sudo docker compose up",
+    "docker:exec": "sudo docker exec -it rugo-caddy /bin/bash",
+    "docker:clean": "sudo docker rm $(sudo docker ps -a -f status=exited -q) && sudo docker volume prune"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rugo-vn/caddy.git"
+  },
+  "keywords": [
+    "Caddy Server",
+    "Mock",
+    "Interaction"
+  ],
+  "author": "HaoVA <hi@haova.me> (https://www.haova.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rugo-vn/caddy/issues"
+  },
+  "homepage": "https://github.com/rugo-vn/caddy#readme",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "got": "^13.0.0",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "object-path": "^0.11.8"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.2.0"
+  }
+}
