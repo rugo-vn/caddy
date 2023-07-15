@@ -1,6 +1,6 @@
 {
-  "name": "@rugo-vn/caddy",
-  "version": "1.0.0-beta.0",
+  "name": "@rugo/caddy",
+  "version": "1.0.1",
   "description": "Interaction and mocking caddy server.",
   "main": "./src/index.js",
   "type": "module",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rugo-vn/caddy.git"
+    "url": "git+https://github.com/rugodev/caddy.git"
   },
   "keywords": [
     "Caddy Server",
@@ -26,11 +26,11 @@
     "Interaction"
   ],
   "author": "HaoVA <hi@haova.me> (https://www.haova.me)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rugo-vn/caddy/issues"
+    "url": "https://github.com/rugodev/caddy/issues"
   },
-  "homepage": "https://github.com/rugo-vn/caddy#readme",
+  "homepage": "https://github.com/rugodev/caddy#readme",
   "dependencies": {
     "@koa/router": "^12.0.0",
     "got": "^13.0.0",

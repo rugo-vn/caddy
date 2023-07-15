@@ -82,6 +82,7 @@ export const createCaddyServer = async () => {
   router.post('/load', (ctx) => {
     config = ctx.request.body;
     ctx.status = 200;
+    ctx.body ||= {};
   });
 
   router.all(
@@ -136,11 +137,9 @@ export const createCaddyClient = () => {
         ).json();
       } catch (err) {
         if (err.message.indexOf('ECONNREFUSED') !== -1) {
-          console.log('Caddy server is ' + colors.red.bold('offline'));
-          this.isOffline = true;
-          return null;
+          throw new Error('caddy is offline');
         } else {
-          console.error(err.message);
+          throw err;
         }
       }
     }.bind(handlers);
